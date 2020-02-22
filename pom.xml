@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>de.adrianwilke</groupId>
 	<artifactId>java-yed</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<name>Java jEd</name>
 	<description>Generator of jEd files in GraphML</description>
 
@@ -27,5 +27,13 @@
 		</dependency>
 
 	</dependencies>
-	
+
+	<distributionManagement>
+		<repository>
+			<id>github-adibaba-java-yed</id>
+			<name>GitHub adibaba java-yed Apache Maven Packages</name>
+			<url>https://maven.pkg.github.com/adibaba/java-yed</url>
+		</repository>
+	</distributionManagement>
+
 </project>
