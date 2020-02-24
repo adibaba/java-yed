@@ -9,17 +9,19 @@ It allows to create:
 - Edge labels (optional)
 - Edge types (optional)
 
-After creating a yEd file, perform the following steps:
+![jEd example](doc/example.png)
+
+
+## How to use the yEd Graph Editor
 
 - Download yEd at https://www.yworks.com/products/yed
-- Open the file
+- Open a generated file
 - Click `Tools` > `Fit Node to Label` > Ok
 - Click `Layout` > `Organic` (e.g.) > Ok
 - At `Palette` > `Current Elements` right-click on an element and click `Select Matching Elements`
 - Customize the elements according to your taste
-- Online editing at yEd Live: https://www.yworks.com/yed-live/
 
-![jEd example](doc/example.png)
+You can also use yEd Live at https://www.yworks.com/yed-live/
 
 
 ## Maven
@@ -50,7 +52,7 @@ Add the following lines to your pom.xml:
 See also: [GitHub Help: Configuring Apache Maven for use with GitHub Packages](https://help.github.com/en/packages/using-github-packages-with-your-projects-ecosystem/configuring-apache-maven-for-use-with-github-packages)
 
 
-# Code examples
+## Code examples
 
 Example code is available in the following files: 
 
@@ -59,7 +61,7 @@ Example code is available in the following files:
 - IoTest.java
 
 
-## Example A
+### Example A
 
 ```java
 // Set file to write
@@ -84,15 +86,18 @@ Io.write(yedDoc.getDocument(), file);
 ```
 
 
-## Example B
+### Example B
 
 ```java
 // Set file to write
 File file = new File("exampleB.yEd.graphml");
 System.out.println("Example file: " + file.getAbsolutePath());
 
-// Create document
+// Create and configure a document
 YedDoc yedDoc = new YedDoc().initialize();
+yedDoc.setFontFamily("Roboto");
+yedDoc.setFontSize(14);
+yedDoc.setFontStyle("bold");
 
 // Create nodes of different types
 int hero = 0;

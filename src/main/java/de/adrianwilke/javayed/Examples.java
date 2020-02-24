@@ -44,8 +44,11 @@ public class Examples {
 		File file = new File("exampleB.yEd.graphml");
 		System.out.println("Example file: " + file.getAbsolutePath());
 
-		// Create document
+		// Create and configure a document
 		YedDoc yedDoc = new YedDoc().initialize();
+		yedDoc.setFontFamily("Roboto");
+		yedDoc.setFontSize(14);
+		yedDoc.setFontStyle("bold");
 
 		// Create nodes of different types
 		int hero = 0;

@@ -21,6 +21,9 @@ public class YedDoc extends GraphmlDoc {
 	protected boolean initialized = false;
 	protected long nodeCounter = 0;
 	protected long edgeCounter = 0;
+	private String fontFamily;
+	private int fontSize = -1;
+	private String fontStyle;
 
 	/**
 	 * Initializes document.
@@ -81,6 +84,15 @@ public class YedDoc extends GraphmlDoc {
 			Element edgeLabel = document.createElement("y:EdgeLabel");
 			edgeLabel.appendChild(document.createTextNode(label));
 			edgeType.appendChild(edgeLabel);
+			if (fontFamily != null) {
+				edgeLabel.setAttribute("fontFamily", fontFamily);
+			}
+			if (fontSize != -1) {
+				edgeLabel.setAttribute("fontSize", String.valueOf(fontSize));
+			}
+			if (fontStyle != null) {
+				edgeLabel.setAttribute("fontStyle", fontStyle);
+			}
 		}
 
 		Element data = document.createElement("data");
@@ -122,6 +134,15 @@ public class YedDoc extends GraphmlDoc {
 
 		Element nodeLabel = document.createElement("y:NodeLabel");
 		nodeLabel.appendChild(document.createTextNode(label));
+		if (fontFamily != null) {
+			nodeLabel.setAttribute("fontFamily", fontFamily);
+		}
+		if (fontSize != -1) {
+			nodeLabel.setAttribute("fontSize", String.valueOf(fontSize));
+		}
+		if (fontStyle != null) {
+			nodeLabel.setAttribute("fontStyle", fontStyle);
+		}
 
 		Element fill = document.createElement("y:Fill");
 		fill.setAttribute("color", new NodeType(type).getColor());
@@ -193,6 +214,48 @@ public class YedDoc extends GraphmlDoc {
 		root.appendChild(nodeGraphics);
 
 		return this;
+	}
+
+	/**
+	 * Gets default font family for nodes and edges.
+	 */
+	public String getFontFamily() {
+		return fontFamily;
+	}
+
+	/**
+	 * Sets default font family for nodes and edges.
+	 */
+	public void setFontFamily(String defaultFontFamily) {
+		this.fontFamily = defaultFontFamily;
+	}
+
+	/**
+	 * Gets default font size for nodes and edges.
+	 */
+	public int getFontSize() {
+		return fontSize;
+	}
+
+	/**
+	 * Sets default font size for nodes and edges.
+	 */
+	public void setFontSize(int fontSize) {
+		this.fontSize = fontSize;
+	}
+
+	/**
+	 * Gets default font style for nodes and edges.
+	 */
+	public String getFontStyle() {
+		return fontStyle;
+	}
+
+	/**
+	 * Sets default font style for nodes and edges.
+	 */
+	public void setFontStyle(String fontStyle) {
+		this.fontStyle = fontStyle;
 	}
 
 }
