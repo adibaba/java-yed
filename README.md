@@ -140,6 +140,8 @@ Token creation is described at [GitHub Help: Creating a personal access token fo
 ## Deployment
 
 - Remove "-SNAPSHOT" from version
-- Create a tag: `git tag -a 0.0.0 -m "0.0.0"`
-- Push the tag' `git push --tags`
-- Create a release from [tags/](https://github.com/adibaba/java-yed/tags) and attach binaries
+- Create a tag, e.g. `git tag -a 0.0.0 -m "0.0.0"`
+- Push the tag: `git push --tags`
+- Create a release from [tags/](https://github.com/adibaba/java-yed/tags)
+- Run mvn install and attach binaries to the release
+- Create new "-SNAPSHOT" version
