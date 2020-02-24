@@ -17,16 +17,47 @@ After creating a yEd file, perform the following steps:
 - Click `Layout` > `Organic` (e.g.) > Ok
 - At `Palette` > `Current Elements` right-click on an element and click `Select Matching Elements`
 - Customize the elements according to your taste
+- Online editing at yEd Live: https://www.yworks.com/yed-live/
 
 ![jEd example](doc/example.png)
 
-# Examples
+
+## Maven
+
+Add the following lines to your pom.xml:
+
+```java
+<dependencies>
+	<!-- https://github.com/adibaba/java-yed -->
+	<dependency>
+		<groupId>de.adrianwilke</groupId>
+		<artifactId>java-yed</artifactId>
+		<version>(0,1]</version>
+	</dependency>
+</dependencies>
+
+[...]
+
+<distributionManagement>
+	<repository>
+		<id>github-adibaba-java-yed</id>
+		<name>GitHub adibaba java-yed Apache Maven Packages</name>
+		<url>https://maven.pkg.github.com/adibaba/java-yed</url>
+	</repository>
+</distributionManagement>
+```
+
+See also: [GitHub Help: Configuring Apache Maven for use with GitHub Packages](https://help.github.com/en/packages/using-github-packages-with-your-projects-ecosystem/configuring-apache-maven-for-use-with-github-packages)
+
+
+# Code examples
 
 Example code is available in the following files: 
 
 - Examples.java
 - YedDocTest.java
 - IoTest.java
+
 
 ## Example A
 
@@ -51,6 +82,7 @@ yedDoc.createEdge(c, a);
 // Write file
 Io.write(yedDoc.getDocument(), file);
 ```
+
 
 ## Example B
 
