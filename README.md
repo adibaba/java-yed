@@ -12,48 +12,6 @@ It allows to create:
 ![jEd example](doc/example.png)
 
 
-## How to use the yEd Graph Editor
-
-- Download yEd at https://www.yworks.com/products/yed
-- Open a generated file
-- Click `Tools` > `Fit Node to Label` > Ok
-- Click `Layout` > `Organic` (e.g.) > Ok
-- At `Palette` > `Current Elements` right-click on an element and click `Select Matching Elements`
-- Customize the elements according to your taste
-
-You can also use yEd Live at https://www.yworks.com/yed-live/
-
-
-## Maven
-
-Add the following lines to your pom.xml:
-
-```xml
-<dependencies>
-	<!-- https://github.com/adibaba/java-yed -->
-	<dependency>
-		<groupId>de.adrianwilke</groupId>
-		<artifactId>java-yed</artifactId>
-		<version>(0,1]</version>
-	</dependency>
-</dependencies>
-
-[...]
-
-<distributionManagement>
-	<repository>
-		<id>github-adibaba-java-yed</id>
-		<name>GitHub adibaba java-yed Apache Maven Packages</name>
-		<url>https://maven.pkg.github.com/adibaba/java-yed</url>
-	</repository>
-</distributionManagement>
-```
-
-To use GitHub Packages, you also have to edit your Maven settings.xml and to create a personal access token.
-A description on how to set up the settings.xml is available at [GitHub Help: Configuring Apache Maven for use with GitHub Packages](https://help.github.com/en/packages/using-github-packages-with-your-projects-ecosystem/configuring-apache-maven-for-use-with-github-packages#authenticating-to-github-packages).
-Token creation is described at [GitHub Help: Creating a personal access token for the command line](https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line).
-
-
 ## Code examples
 
 Example code is available in the following files: 
@@ -127,3 +85,50 @@ yedDoc.createEdge(r, h, unknownLabel, unknown);
 // Write file
 Io.write(yedDoc.getDocument(), file);
 ```
+
+
+## How to use the yEd Graph Editor
+
+- Download yEd at https://www.yworks.com/products/yed
+- Open a generated file
+- Click `Tools` > `Fit Node to Label` > Ok
+- Click `Layout` > `Organic` (e.g.) > Ok
+- At `Palette` > `Current Elements` right-click on an element and click `Select Matching Elements`
+- Customize the elements according to your taste
+
+You can also use yEd Live at https://www.yworks.com/yed-live/
+
+
+## Usage
+
+Download the latest [release](releases/) or current [code](archive/master.zip).
+
+
+### Usage of Maven and GitHub Packages
+
+Add the following lines to your pom.xml:
+
+```xml
+<dependencies>
+	<!-- https://github.com/adibaba/java-yed -->
+	<dependency>
+		<groupId>de.adrianwilke</groupId>
+		<artifactId>java-yed</artifactId>
+		<version>(0,1]</version>
+	</dependency>
+</dependencies>
+
+[...]
+
+<distributionManagement>
+	<repository>
+		<id>github-adibaba-java-yed</id>
+		<name>GitHub adibaba java-yed Apache Maven Packages</name>
+		<url>https://maven.pkg.github.com/adibaba/java-yed</url>
+	</repository>
+</distributionManagement>
+```
+
+To use GitHub Packages, you also have to edit your Maven settings.xml and to create a personal access token.
+A description on how to set up the settings.xml is available at [GitHub Help: Configuring Apache Maven for use with GitHub Packages](https://help.github.com/en/packages/using-github-packages-with-your-projects-ecosystem/configuring-apache-maven-for-use-with-github-packages#authenticating-to-github-packages).
+Token creation is described at [GitHub Help: Creating a personal access token for the command line](https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line).
