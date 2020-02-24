@@ -101,7 +101,10 @@ You can also use yEd Live at https://www.yworks.com/yed-live/
 
 ## Usage
 
-Download the latest [release](releases/) or current [code](archive/master.zip).
+Download the latest
+[release](https://github.com/adibaba/java-yed/releases)
+or current
+[code](https://github.com/adibaba/java-yed/archive/master.zip).
 
 
 ### Usage of Maven and GitHub Packages
@@ -139,4 +142,4 @@ Token creation is described at [GitHub Help: Creating a personal access token fo
 - Remove "-SNAPSHOT" from version
 - Create a tag: `git tag -a 0.0.0 -m "0.0.0"`
 - Push the tag' `git push --tags`
-- Create a release from [tags/](tags/) and attach binaries
+- Create a release from [tags/](https://github.com/adibaba/java-yed/tags) and attach binaries
