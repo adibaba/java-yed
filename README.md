@@ -26,7 +26,7 @@ After creating a yEd file, perform the following steps:
 
 Add the following lines to your pom.xml:
 
-```java
+```xml
 <dependencies>
 	<!-- https://github.com/adibaba/java-yed -->
 	<dependency>
