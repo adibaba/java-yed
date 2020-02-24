@@ -49,7 +49,9 @@ Add the following lines to your pom.xml:
 </distributionManagement>
 ```
 
-See also: [GitHub Help: Configuring Apache Maven for use with GitHub Packages](https://help.github.com/en/packages/using-github-packages-with-your-projects-ecosystem/configuring-apache-maven-for-use-with-github-packages)
+To use GitHub Packages, you also have to edit your Maven settings.xml and to create a personal access token.
+A description on how to set up the settings.xml is available at [GitHub Help: Configuring Apache Maven for use with GitHub Packages](https://help.github.com/en/packages/using-github-packages-with-your-projects-ecosystem/configuring-apache-maven-for-use-with-github-packages#authenticating-to-github-packages).
+Token creation is described at [GitHub Help: Creating a personal access token for the command line](https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line).
 
 
 ## Code examples
