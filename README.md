@@ -57,8 +57,8 @@ See also: [GitHub Help: Configuring Apache Maven for use with GitHub Packages](h
 Example code is available in the following files: 
 
 - [Examples.java](src/main/java/de/adrianwilke/javayed/Examples.java)
-- [YedDocTest.java](src/main/java/de/adrianwilke/javayed/YedDocTest.java)
-- [IoTest.java](src/main/java/de/adrianwilke/javayed/IoTest.java)
+- [YedDocTest.java](src/test/java/de/adrianwilke/javayed/YedDocTest.java)
+- [IoTest.java](src/test/java/de/adrianwilke/javayed/IoTest.java)
 
 
 ### Example A
