@@ -1,4 +1,4 @@
-package de.adrianwilke.javayed;
+package de.adrianwilke.javayed.xml;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -11,10 +11,6 @@ import org.w3c.dom.Document;
  * 
  * To create an underlying {@link Document}, {@link #createDocument()} can be
  * used.
- * 
- * The required instances of {@link DocumentBuilderFactory},
- * {@link DocumentBuilder}, and {@link Document} can be modified of sub-classes
- * extending this class.
  *
  * @author Adrian Wilke
  */

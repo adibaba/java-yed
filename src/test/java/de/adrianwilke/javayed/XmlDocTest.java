@@ -4,7 +4,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.w3c.dom.Document;
 
-import de.adrianwilke.javayed.XmlDoc;
+import de.adrianwilke.javayed.xml.XmlDoc;
 
 /**
  * Tests {@link XmlDoc}.

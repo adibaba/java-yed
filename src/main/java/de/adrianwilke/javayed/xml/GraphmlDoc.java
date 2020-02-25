@@ -1,4 +1,4 @@
-package de.adrianwilke.javayed;
+package de.adrianwilke.javayed.xml;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -7,6 +7,8 @@ import org.w3c.dom.Element;
 
 /**
  * GraphML document.
+ * 
+ * Creates graphml-element in document. Adds graph-elements in graphml-element.
  * 
  * @see http://graphml.graphdrawing.org/specification/xsd.html
  *
@@ -18,49 +20,56 @@ public class GraphmlDoc extends XmlDoc {
 		DIRECTED, UNDIRECTED
 	}
 
-	protected Element root;
+	protected Element graphml;
 	protected List<Element> graphs = new LinkedList<>();
 
 	/**
 	 * Creates default root element, named "graphml".
 	 */
-	public GraphmlDoc createRoot() {
+	public GraphmlDoc createGraphml() {
 		if (document == null) {
-			createDocument();
+			super.createDocument();
 		}
 
 		Element element = document.createElement("graphml");
 		document.appendChild(element);
-		
-		root = element;
-		
+
+		graphml = element;
+
 		return this;
 	}
 
 	/**
 	 * Gets the default root element, named "graphml".
 	 */
-	public Element getRoot() {
-		if (root == null) {
-			createRoot();
+	public Element getGraphml() {
+		if (graphml == null) {
+			createGraphml();
 		}
 
-		return root;
+		return graphml;
 	}
 
 	/**
 	 * Appends graph element to root.
 	 */
 	public GraphmlDoc addGraph(GraphType edgedefault) {
-		if (root == null) {
-			createRoot();
+		if (graphml == null) {
+			createGraphml();
 		}
 
 		Element graph = document.createElement("graph");
 		graph.setAttribute("edgedefault", edgedefault.toString().toLowerCase());
-		root.appendChild(graph);
+		graphml.appendChild(graph);
 		graphs.add(graph);
 		return this;
+	}
+
+	/**
+	 * Gets list of graphs.
+	 */
+	public List<Element> getGraphs() {
+		return graphs;
 	}
 
 }

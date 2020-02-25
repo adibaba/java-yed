@@ -9,6 +9,9 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
+import de.adrianwilke.javayed.graph.Graph;
+import de.adrianwilke.javayed.xml.YedDoc;
+
 /**
  * Tests {@link Io}.
  *
@@ -26,8 +29,10 @@ public class IoTest {
 			file.deleteOnExit();
 		}
 
-		YedDoc yedDoc = new YedDoc().initialize();
-		yedDoc.createEdge(yedDoc.createNode("a"), yedDoc.createNode("b"));
+		Graph graph = new Graph();
+		graph.createEdge(graph.createNode().setLabel("a"), graph.createNode().setLabel("b"));
+		YedDoc yedDoc = new YedDoc();
+		yedDoc.create(graph);
 		Io.write(yedDoc.getDocument(), file);
 
 		Assert.assertTrue("File created", file.exists());
@@ -45,8 +50,10 @@ public class IoTest {
 		}
 
 		// Write
-		YedDoc yedDoc = new YedDoc().initialize();
-		yedDoc.createEdge(yedDoc.createNode("a"), yedDoc.createNode("b"));
+		Graph graph = new Graph();
+		graph.createEdge(graph.createNode().setLabel("a"), graph.createNode().setLabel("b"));
+		YedDoc yedDoc = new YedDoc();
+		yedDoc.create(graph);
 		Io.write(yedDoc.getDocument(), file);
 
 		// Read and check graphml element
